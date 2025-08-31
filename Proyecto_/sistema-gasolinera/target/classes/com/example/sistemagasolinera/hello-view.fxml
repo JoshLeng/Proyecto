@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.Tab?>
+
+<TabPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.sistemagasolinera.HelloController" style="-fx-background-color:linear-gradient(to bottom,#e0eafc,#cfdef3);">
+    <tabs>
+        <Tab text="⛽ Operaciones">
+            <VBox spacing="16" alignment="CENTER" style="-fx-padding: 28; -fx-background-color: #f8fafc; -fx-border-radius: 10; -fx-background-radius: 10; -fx-effect: dropshadow(gaussian, #b0c4de, 8, 0, 0, 2);">
+                <Label text="Sistema Gasolinera" style="-fx-font-size: 26px; -fx-font-weight: bold; -fx-text-fill: #2b5876;" />
+                <HBox spacing="12" alignment="CENTER">
+                    <Label text="⛽ Tipo de gasolina:" style="-fx-font-size: 14px; -fx-text-fill: #333;" />
+                    <ComboBox fx:id="comboTipoGasolina" prefWidth="160" />
+                </HBox>
+                <HBox spacing="12" alignment="CENTER">
+                    <Label text="🛢️ Bomba:" style="-fx-font-size: 14px; -fx-text-fill: #333;" />
+                    <ComboBox fx:id="comboBombas" prefWidth="160" />
+                </HBox>
+                <HBox spacing="12" alignment="CENTER">
+                    <Label text="💧 Litros a vender:" style="-fx-font-size: 14px; -fx-text-fill: #333;" />
+                    <TextField fx:id="txtLitros" promptText="Ingrese litros" prefWidth="110" />
+                    <Button text="💸 Registrar Venta" onAction="#registrarVenta" style="-fx-background-color: #2b5876; -fx-text-fill: white; -fx-font-weight: bold;" />
+                </HBox>
+                <HBox spacing="12" alignment="CENTER">
+                    <Label text="🔄 Litros para iniciar/recargar bomba:" style="-fx-font-size: 14px; -fx-text-fill: #333;" />
+                    <TextField fx:id="txtRecarga" promptText="Litros" prefWidth="110" />
+                    <Button text="🔋 Iniciar/Recargar Bomba" onAction="#iniciarBomba" style="-fx-background-color: #43cea2; -fx-text-fill: white; -fx-font-weight: bold;" />
+                </HBox>
+            </VBox>
+        </Tab>
+        <Tab text="📊 Reportes">
+            <VBox spacing="16" alignment="CENTER" style="-fx-padding: 28; -fx-background-color: #f8fafc; -fx-border-radius: 10; -fx-background-radius: 10; -fx-effect: dropshadow(gaussian, #b0c4de, 8, 0, 0, 2);">
+                <Label text="Reportes de Gasolinera" style="-fx-font-size: 26px; -fx-font-weight: bold; -fx-text-fill: #2b5876;" />
+                <HBox spacing="12" alignment="CENTER">
+                    <Button text="📋 Reporte de Inventario" onAction="#mostrarInventario" style="-fx-background-color: #2b5876; -fx-text-fill: white; -fx-font-weight: bold;" />
+                    <ComboBox fx:id="comboBombasReporte" promptText="Seleccione bomba" prefWidth="160" />
+                    <Button text="🛢️ Reporte de Bomba" onAction="#reporteBomba" style="-fx-background-color: #43cea2; -fx-text-fill: white; -fx-font-weight: bold;" />
+                </HBox>
+                <TextArea fx:id="txtAreaMensajes" prefWidth="480" prefHeight="270" editable="false" wrapText="true" style="-fx-font-size: 14px; -fx-background-color: #e0eafc; -fx-border-radius: 8; -fx-background-radius: 8;" />
+            </VBox>
+        </Tab>
+    </tabs>
+</TabPane>
